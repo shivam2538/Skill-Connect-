@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Sign In Page</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        .skill {
+            font-size: 1.5rem;
+            background-color: lightsalmon;
+            padding: 15px 25px;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .skill a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+        
+        .card {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInSlide 1s ease-out;
+        }
+        
+        @keyframes fadeInSlide {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                cb opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .highlight {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+            color: #333;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px dashed #6a11cb;
+            margin-top: 20px;
+            animation: bounceEffect 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes bounceEffect {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            width: 300px;
+            margin-top: 20px;
+            background-color: lightblue;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .center-text {
+            font-size: 1.5rem;
+            color: red;
+            animation: fadeInBounce 2s ease-in-out;
+        }
+        
+        @keyframes fadeInBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        
+        .card:hover,
+        .highlight:hover,
+        .skill:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="skill">
+        <a href="./loginpage.html">Sign in as Skilled Person</a>
+    </div>
+
+    <div class="card">
+        <h2>SARV SAMADHAN</h2>
+    </div>
+
+    <div class="highlight">
+
+        <p>Solution for All Problems</p>
+    </div>
+
+    <div class="skill">
+
+        <a href="./loginpage2.html">Sign in as new user</a>
+    </div>
+
+    <script>
+        // Example JavaScript: Show an alert when the "Sign in as Skilled Person" link is clicked
+        document.querySelector('.skill a').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('Redirecting to the Skilled Person Login Page');
+            window.location.href = './loginpage.html';
+        });
+
+        function displayAlert(message, callback) {
+            const alertBox = document.createElement('div');
+            alertBox.textContent = message;
+            alertBox.style.position = 'fixed';
+            alertBox.style.top = '50%';
+            alertBox.style.left = '50%';
+            alertBox.style.transform = 'translate(-50%, -50%)';
+            alertBox.style.background = '#333';
+            alertBox.style.color = '#fff';
+            alertBox.style.padding = '20px';
+            alertBox.style.borderRadius = '10px';
+            alertBox.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
+            alertBox.style.zIndex = '1000';
+
+            document.body.appendChild(alertBox);
+
+            setTimeout(() => {
+                document.body.removeChild(alertBox);
+                if (callback) callback();
+            }, 2000);
+        }
+    </script>
+</body>

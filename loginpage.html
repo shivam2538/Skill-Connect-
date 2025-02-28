@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In Page</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container img {
+            display: block;
+            margin: 0 auto 20px;
+            width: 100px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        form label {
+            font-weight: 400;
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        
+        form input,
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        form input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        form button {
+            width: 100%;
+            padding: 10px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        form button:hover {
+            background: #d32f2f;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <img src="Skill.jpeg" alt="Logo">
+        <h1>Sign Up</h1>
+
+
+
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pw">Password:</label>
+                <input type="password" id="pw" name="pw" placeholder="Create a password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="c-pw">Confirm Password:</label>
+                <input type="password" id="c-pw" name="c-pw" placeholder="Confirm your password" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label>Age Group:</label>
+                <input type="radio" id="Above18" name="ageGroup" value="Above 18">
+                <label for="Above18">Above 18</label>
+                <input type="radio" id="Below18" name="ageGroup" value="Below 18">
+                <label for="Below18">Below 18</label>
+            </div>
+
+            <div class="form-group">
+                <label for="spec">Specialization:</label>
+                <select name="spec" id="spec">
+                    <option value="default">Choose specialization</option>
+                    <option value="Education">Education</option>
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="Electrician">Electrician</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Technical">Technical</option>
+                    <option value="Teacher">Teacher</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea name="address" id="address" cols="30" rows="3" placeholder="Enter your address"></textarea>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            alert(`Welcome, ${username}! Your signup is complete.`);
+        });
+    </script>
+</body>
+
+</html>

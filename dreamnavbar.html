@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Navbar</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .navbar ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        .navbar ul li a:hover {
+            color: #ffdd57;
+            transform: scale(1.1);
+        }
+        
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: #007bff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            z-index: 1000;
+            border-radius: 5px;
+        }
+        
+        .navbar ul li ul li {
+            margin: 0;
+            padding: 5px 20px;
+        }
+        
+        .navbar ul li ul li a {
+            color: white;
+            font-size: 16px;
+        }
+        
+        .navbar ul li:hover ul {
+            display: block;
+        }
+        
+        .navbar ul li ul li a:hover {
+            color: #ffdd57;
+        }
+        
+        .animated-text {
+            font-size: 50px;
+            color: #d21414;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out, moveUp 2s ease-in-out, bounce 1s 2s infinite alternate;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes moveUp {
+            from {
+                transform: translateY(20px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            .navbar ul li {
+                margin: 10px 0;
+            }
+            .navbar ul li ul {
+                position: static;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home Appliances</a>
+                <ul>
+                    <li><a href="dreamflexbox.html">Refrigerators</a></li>
+                    <li><a href="#">Grinder</a></li>
+                    <li><a href="#">Cooker</a></li>
+                    <li><a href="#">Tumbler</a></li>
+                    <li><a href="#">Electric Cooker</a></li>
+                    <li><a href="#">Electric Iron</a></li>
+                    <li><a href="#">Mobile Appliances</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Electric Appliances</a>
+                <ul>
+                    <li><a href="#">Electric Iron</a></li>
+                    <li><a href="#">Light</a></li>
+                    <li><a href="#">Switch</a></li>
+                    <li><a href="#">Wire</a></li>
+                    <li><a href="#">Other Electrical Problems</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Education Field</a>
+                <ul>
+                    <li><a href="Dreamflexbox2.html">Teacher</a></li>
+                    <li><a href="Dreamflexbox3.html">Doctor</a></li>
+                    <li><a href="Dreamflexbox4.html">Pharmacist</a></li>
+                    <li><a href="#">Software Engineer</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <p class="animated-text">App .</p>
+    <p class="animated-text"> To Provide All Solution in single click.</p>
+    <img src="Welcome.jpg" alt="Welcome">
+</body>
+
+</html>

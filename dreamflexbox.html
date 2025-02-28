@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            max-height: 200px;
+            object-fit: cover;
+        }
+        
+        .container button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .container button:hover {
+            background-color: #0056b3;
+        }
+        
+        .container a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="PIC.jpg" alt="User Image">         <button id="send-location">Send Location</button>         <button id="confirm-payment">Confirm Payment</button>         <button id="call-now">Call Now</button>     </div>
+
+
+    <script>
+        // Function to get user's location and send it to WhatsApp
+            
+        document.getElementById('send-location').addEventListener('click', () => {      
+            if (navigator.geolocation) {        
+                navigator.geolocation.getCurrentPosition(position => {          
+                    const latitude = position.coords.latitude;          
+                    const longitude = position.coords.longitude;          
+                    const message = `Here is my location: https://www.google.com/maps?q=${latitude},${longitude}`;          
+                    const phone = "919508271236"; // Replace with the receiver's WhatsApp number
+                              
+                    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;          
+                    window.open(whatsappUrl, '_blank');        
+                }, error => {          
+                    alert('Unable to retrieve your location. Please ensure location services are enabled.');        
+                });      
+            } else {        
+                alert('Geolocation is not supported by your browser.');      
+            }    
+        });
+
+             // Redirect to Razorpay link on Confirm Payment button click
+            
+        document.getElementById('confirm-payment').addEventListener('click', () => {      
+            window.location.href = 'https://razorpay.me/@shivamsatyarthi';    
+        });
+
+             // Redirect to WhatsApp on Call Now button click
+            
+        document.getElementById('call-now').addEventListener('click', () => {      
+            const phone = "919508271236"; // Replace with the receiver's WhatsApp number
+                  
+            const message = "Hi,I want Help .";      
+            const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;      
+            window.open(whatsappUrl, '_blank');    
+        });
+    </script>
+</body>
+
+</html>

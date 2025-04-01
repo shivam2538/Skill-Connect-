@@ -157,6 +157,12 @@
             const username = document.getElementById("username").value;
             alert(`Welcome, ${username}! Your signup is complete.`);
         });
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            alert(`Welcome, ${username}! Your signup is complete.`);
+            window.location.href = "Dreamnavbar.html"; // Redirect to the navbar page
+        });
     </script>
 </body>
 
